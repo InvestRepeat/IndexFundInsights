@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="List of best Index Funds ranked as per Total Fees, where Total Fees is Expense Ratio & Tracking Error.">
-  <title>Best Mutual Funds - List of Index Funds with Total Fees</title>
+  <meta name="description" content="List of best mutual funds ranked as per Total Fees, where Total Fees is the combined value of Expense Ratio & Tracking Error.">
+  <title>Index Fund Insights</title>
   <link rel="icon" href="https://static-00.iconduck.com/assets.00/chart-increasing-emoji-2048x2048-zizb1pb6.png" type="image/x-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -166,6 +166,21 @@
       </table>
     </div>
 
+    <h3 class="mt-5 mb-3 text-center">Nifty Microcap 250</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Fund Name</th>
+            <th >Tracking Error</th>
+            <th >Expense Ratio</th>
+            <th>Total Fees</th>
+          </tr>
+        </thead>
+        <tbody id="NiftyMicrocap250"></tbody>
+      </table>
+    </div>
+
     <h3 class="mt-5 mb-3 text-center"><i class="fas fa-flag-usa"></i> S&P 500</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
@@ -246,7 +261,7 @@
     let NiftyNext50 = [
       { fundName: "ICICI Pru Nifty Next 50", trackingError: 0.06, expenseRatio: 0.3, totalFees: 0 },
       { fundName: "UTI Nifty Next 50", trackingError: 0.07, expenseRatio: 0.34, totalFees: 0 },
-      { fundName: "SBI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.33, totalFees: 0 }
+      { fundName: "SBI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.34, totalFees: 0 }
     ];
 
     let NiftyMidcap150 = [
@@ -256,13 +271,13 @@
     ];
 
     let Nifty200M30 = [
-      { fundName: "UTI Nifty200 Momentum 30", trackingError: 0.18, expenseRatio: 0.45, totalFees: 0 },
+      { fundName: "UTI Nifty200 Momentum 30", trackingError: 0.18, expenseRatio: 0.46, totalFees: 0 },
       { fundName: "Motilal Oswal (AUM<500Cr)", trackingError: 0.24, expenseRatio: 0.31, totalFees: 0 },
       { fundName: "ICICI Pru (AUM<500Cr)", trackingError: 0.19, expenseRatio: 0.34, totalFees: 0 }
     ];
 
     let Nifty100 = [
-      { fundName: "Axis Nifty 100", trackingError: 0.06, expenseRatio: 0.16, totalFees: 0 },
+      { fundName: "Axis Nifty 100", trackingError: 0.06, expenseRatio: 0.21, totalFees: 0 },
       { fundName: "HDFC (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.3, totalFees: 0 },
       { fundName: "Bandhan (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.11, totalFees: 0 }
     ];
@@ -279,8 +294,12 @@
 
     let NiftySmallcap250 = [
       { fundName: "Nippon India Smallcap 250", trackingError: 0.11, expenseRatio: 0.32, totalFees: 0 },
-      { fundName: "Motilal Oswal (AUM<500Cr)", trackingError: 0.09, expenseRatio: 0.36, totalFees: 0 },
+      { fundName: "Motilal Oswal", trackingError: 0.09, expenseRatio: 0.36, totalFees: 0 },
       { fundName: "SBI (AUM<500Cr)", trackingError: 0.05, expenseRatio: 0.41, totalFees: 0 }
+    ];
+
+    let NiftyMicrocap250 = [
+      { fundName: "Motilal Oswal Microcap 250", trackingError: 0.13, expenseRatio: 0.35, totalFees: 0 }
     ];
 
     let SP500 = [
@@ -351,12 +370,18 @@
       updateTable(NiftySmallcap250, 'NiftySmallcap250');
 
       // Fund 10
+      updateTable(NiftyMicrocap250, 'NiftyMicrocap250');
+      calculateTotalFees(NiftyMicrocap250);
+      NiftyMicrocap250.sort((a, b) => a.totalFees - b.totalFees);
+      updateTable(NiftyMicrocap250, 'NiftyMicrocap250');
+
+      // Fund 11
       updateTable(SP500, 'SP500');
       calculateTotalFees(SP500);
       SP500.sort((a, b) => a.totalFees - b.totalFees);
       updateTable(SP500, 'SP500');
 
-      // Fund 11
+      // Fund 12
       updateTable(N100, 'N100');
       calculateTotalFees(N100);
       N100.sort((a, b) => a.totalFees - b.totalFees);
