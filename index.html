@@ -30,7 +30,7 @@
   <div class="row">
   <div class="col-12">
 
-    <h2 class="text-center">Total Fees of Index Fund = Tracking Error + Expense Ratio<span class="badge badge-pill badge-success text-center">Last Updated: May 2024</span>:</h2>
+    <h2 class="text-center">Total Fees of Index Fund = Tracking Error + Expense Ratio<span class="badge badge-pill badge-success text-center">Last Updated: June 2024</span>:</h2>
 
     <h3 class="mt-5 mb-3 text-center">Nifty 50</h3>
     <div class="table-responsive">
@@ -259,11 +259,11 @@
           <li>Must be a "Direct" plan.</li>
           <li>Fund of Funds (FoF) not considered as tracking error & expense ratio are reported lower than actual.</li>
           <li>Among all the fund of a particular index, only top 3 funds depending on its 'Total Fees' & AUM for each Index will be visible.</li>
-          <!-- <li>More detailed & expanded version of the criteria: <a href="https://github.com/InvestRepeat/IndexFundInsights/tree/main#indexfundinsights" target="_blank">Click Here</a></li>-->
+          <li>More detailed & expanded version of the criteria: <a href="https://github.com/InvestRepeat/IndexFundInsights/tree/main#indexfundinsights" target="_blank">Click Here</a></li>
       </ul>
-      <!-- <hr>
+      <hr>
       <h5 class="alert-heading">For Nerds:</h5>
-      <p>Code is open source. Help me make it better & more automated: <a href="https://github.com/InvestRepeat/IndexFundInsights" target="_blank">Github.com/InvestRepeat</a>. For any suggestions or data correction, please message me on X at <a href="https://x.com/InvestRepeat" target="_blank">@InvestRepeat</a></p> -->
+      <p>Code is open source. Help me make it better & more automated: <a href="https://github.com/InvestRepeat/IndexFundInsights" target="_blank">Github.com/InvestRepeat</a>. For any suggestions or data correction, please message me on X at <a href="https://x.com/InvestRepeat" target="_blank">@InvestRepeat</a></p>
     </div>
 
   </div>
@@ -274,79 +274,78 @@
 
     // ~~~ Mutual Fund Data ~~~
     let Nifty50 = [
-      { fundName: "Navi Nifty 50", trackingError: 0.05, expenseRatio: 0.06, totalFees: 0 },
-      { fundName: "Bandhan Nifty 50", trackingError: 0.06, expenseRatio: 0.1, totalFees: 0 },
-      { fundName: "ICICI Pru Nifty 50", trackingError: 0.05, expenseRatio: 0.17, totalFees: 0 },
-      { fundName: "SBI Nifty 50", trackingError: 0.05, expenseRatio: 0.18, totalFees: 0 },
-      //{ fundName: "UTI Nifty 50", trackingError: 0.04, expenseRatio: 0.21, totalFees: 0 },
-      { fundName: "HDFC Nifty 50", trackingError: 0.05, expenseRatio: 0.2, totalFees: 0 },
-      { fundName: "Nippon India Nifty 50", trackingError: 0.05, expenseRatio: 0.2, totalFees: 0 }
+      { fundName: "Navi Nifty 50", trackingError: 0.06, expenseRatio: 0.06, totalFees: 0 },
+      { fundName: "Bandhan Nifty 50", trackingError: 0.08, expenseRatio: 0.1, totalFees: 0 },
+      { fundName: "ICICI Pru Nifty 50", trackingError: 0.06, expenseRatio: 0.17, totalFees: 0 },
+      { fundName: "SBI Nifty 50", trackingError: 0.05, expenseRatio: 0.2, totalFees: 0 },
+      { fundName: "UTI Nifty 50", trackingError: 0.05, expenseRatio: 0.18, totalFees: 0 },
+      { fundName: "HDFC Nifty 50", trackingError: 0.05, expenseRatio: 0.2, totalFees: 0 }
     ];
 
     let Sensex = [
-      { fundName: "HDFC Sensex", trackingError: 0.04, expenseRatio: 0.2, totalFees: 0 },
-      { fundName: "ICICI Pru Sensex", trackingError: 0.04, expenseRatio: 0.18, totalFees: 0 },
-      { fundName: "Nippon India Sensex", trackingError: 0.06, expenseRatio: 0.2, totalFees: 0 }
+      { fundName: "HDFC Sensex", trackingError: 0.05, expenseRatio: 0.2, totalFees: 0 },
+      { fundName: "ICICI Pru Sensex", trackingError: 0.07, expenseRatio: 0.18, totalFees: 0 },
+      { fundName: "Nippon India Sensex", trackingError: 0.07, expenseRatio: 0.2, totalFees: 0 }
     ];
 
     let NiftyNext50 = [
-      { fundName: "ICICI Pru Nifty Next 50", trackingError: 0.05, expenseRatio: 0.3, totalFees: 0 },
-      { fundName: "UTI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.35, totalFees: 0 },
-      { fundName: "SBI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.34, totalFees: 0 }
+      { fundName: "ICICI Pru Nifty Next 50", trackingError: 0.09, expenseRatio: 0.3, totalFees: 0 },
+      { fundName: "UTI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.34, totalFees: 0 },
+      { fundName: "SBI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.33, totalFees: 0 }
     ];
 
     let NiftyMidcap150 = [
       { fundName: "Motilal Oswal", trackingError: 0.06, expenseRatio: 0.30, totalFees: 0 },
-      { fundName: "ICICI Pru (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.28, totalFees: 0 },
-      { fundName: "Nippon India", trackingError: 0.08, expenseRatio: 0.3, totalFees: 0 }
-      //{ fundName: "SBI (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.41, totalFees: 0 }
+      { fundName: "ICICI Pru (AUM<500Cr)", trackingError: 0.08, expenseRatio: 0.28, totalFees: 0 },
+      { fundName: "Nippon India", trackingError: 0.09, expenseRatio: 0.3, totalFees: 0 },
+      { fundName: "SBI (AUM<500Cr)", trackingError: 0.05, expenseRatio: 0.41, totalFees: 0 }
     ];
 
     let Nifty200M30 = [
-      { fundName: "UTI Nifty200 Momentum 30", trackingError: 0.15, expenseRatio: 0.46, totalFees: 0 },
-      { fundName: "Motilal Oswal (AUM<500Cr)", trackingError: 0.17, expenseRatio: 0.33, totalFees: 0 },
-      { fundName: "HDFC (AUM<500Cr)", trackingError: 0.08, expenseRatio: 0.4, totalFees: 0 }
+      { fundName: "UTI Nifty200 Momentum 30", trackingError: 0.16, expenseRatio: 0.46, totalFees: 0 },
+      { fundName: "Motilal Oswal (AUM<500Cr)", trackingError: 0.2, expenseRatio: 0.33, totalFees: 0 },
+      { fundName: "HDFC (AUM<500Cr)", trackingError: 0.11, expenseRatio: 0.4, totalFees: 0 }
     ];
 
     let Nifty100 = [
-      { fundName: "Axis Nifty 100", trackingError: 0.06, expenseRatio: 0.22, totalFees: 0 },
-      { fundName: "HDFC (AUM<500Cr)", trackingError: 0.05, expenseRatio: 0.3, totalFees: 0 },
-      { fundName: "Bandhan (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.1, totalFees: 0 }
+      { fundName: "Axis Nifty 100", trackingError: 0.08, expenseRatio: 0.21, totalFees: 0 },
+      { fundName: "HDFC (AUM<500Cr)", trackingError: 0.07, expenseRatio: 0.1, totalFees: 0 },
+      { fundName: "Bandhan (AUM<500Cr)", trackingError: 0.07, expenseRatio: 0.1, totalFees: 0 }
     ];
 
     let Nifty500 = [
-      { fundName: "Motilal Oswal Nifty 500", trackingError: 0.13, expenseRatio: 0.13, totalFees: 0 }
+      { fundName: "Motilal Oswal Nifty 500", trackingError: 0.14, expenseRatio: 0.2, totalFees: 0 }
     ];
 
     let Nifty50EqualWeight = [
-      { fundName: "DSP Nifty 50 Equal Weight", trackingError: 0.04, expenseRatio: 0.4, totalFees: 0 },
+      { fundName: "DSP Nifty 50 Equal Weight", trackingError: 0.06, expenseRatio: 0.4, totalFees: 0 },
       { fundName: "HDFC Nifty 50 Equal Weight", trackingError: 0.04, expenseRatio: 0.4, totalFees: 0 },
       { fundName: "Aditya Birla (AUM<500Cr)", trackingError: 0.04, expenseRatio: 0.39, totalFees: 0 }
     ];
 
     let NiftySmallcap250 = [
-      { fundName: "Nippon India Smallcap 250", trackingError: 0.18, expenseRatio: 0.35, totalFees: 0 },
+      { fundName: "Nippon India Smallcap 250", trackingError: 0.21, expenseRatio: 0.35, totalFees: 0 },
       { fundName: "Motilal Oswal", trackingError: 0.07, expenseRatio: 0.36, totalFees: 0 },
-      { fundName: "SBI Smallcap 250", trackingError: 0.06, expenseRatio: 0.41, totalFees: 0 }
+      { fundName: "SBI Smallcap 250", trackingError: 0.07, expenseRatio: 0.41, totalFees: 0 }
     ];
 
     let NiftyMicrocap250 = [
-      { fundName: "Motilal Oswal Microcap 250", trackingError: 0.22, expenseRatio: 0.45, totalFees: 0 }
+      { fundName: "Motilal Oswal Microcap 250", trackingError: 0.25, expenseRatio: 0.45, totalFees: 0 }
     ];
 
     let NiftyBank = [
-      { fundName: "Motilal Oswal Nifty Bank", trackingError: 0.07, expenseRatio: 0.32, totalFees: 0 },
-      { fundName: "Navi Nifty Bank (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.1, totalFees: 0 },
-      { fundName: "ICICI Prudential (AUM<500Cr)", trackingError: 0.07, expenseRatio: 0.2, totalFees: 0 }
+      { fundName: "Motilal Oswal Nifty Bank", trackingError: 0.09, expenseRatio: 0.32, totalFees: 0 },
+      { fundName: "Navi Nifty Bank (AUM<500Cr)", trackingError: 0.07, expenseRatio: 0.1, totalFees: 0 },
+      { fundName: "ICICI Prudential (AUM<500Cr)", trackingError: 0.13, expenseRatio: 0.2, totalFees: 0 }
     ];
 
     let N50V20 = [
-      { fundName: "Nippon India Nifty 50 Value 20", trackingError: 0.08, expenseRatio: 0.25, totalFees: 0 },
-      { fundName: "ICICI Prudential (AUM<500Cr)", trackingError: 0.06, expenseRatio: 0.15, totalFees: 0 }
+      { fundName: "Nippon India Nifty 50 Value 20", trackingError: 0.09, expenseRatio: 0.25, totalFees: 0 },
+      { fundName: "ICICI Prudential (AUM<500Cr)", trackingError: 0.09, expenseRatio: 0.15, totalFees: 0 }
     ];
 
     let SP500 = [
-      { fundName: "Motilal Oswal S&P 500", trackingError: 0.09, expenseRatio: 0.62, totalFees: 0 }
+      { fundName: "Motilal Oswal S&P 500", trackingError: 0.08, expenseRatio: 0.62, totalFees: 0 }
     ];
 
     let N100 = [
