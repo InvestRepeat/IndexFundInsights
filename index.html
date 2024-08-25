@@ -7,7 +7,7 @@
   <meta name="description" content="Index Fund Insights is a list of best mutual funds ranked as per Total Fees, where Total Fees is the combined value of Expense Ratio & Tracking Error.">
   <meta name="keywords" content="mutual fund, index fund, sip, nifty, sensex">
   <title>Best Mutual Funds for SIP - Index Fund Insights</title>
-  <link rel="icon" href="https://static-00.iconduck.com/assets.00/chart-increasing-emoji-2048x2048-zizb1pb6.png" type="image/x-icon">
+  <link rel="icon" href="http://static-00.iconduck.com/assets.00/chart-increasing-emoji-2048x2048-zizb1pb6.png" type="image/x-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,15 @@
       max-width: 100%;
       height: auto;
     }
+
+    .sticky-top {
+            background-color: #f8f9fa;
+        }
+    .content {
+            min-height: 600px;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
   </style>
 
 </head>
@@ -36,7 +45,31 @@
 
     <h2 class="text-center">Total Fees of Index Fund = Tracking Error + Expense Ratio<span class="badge badge-pill badge-success text-center">Last Updated: Aug 2024</span>:</h2>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty 50</h3>
+    <div class="mt-5 mb-3 text-center sticky-top py-3">
+      <div class="container">
+          <select class="form-control" id="section-select">
+              <option selected>Choose an Index Fund</option>
+              <option value="Nifty50Header">Nifty 50</option>
+              <option value="NiftyNext50Header">Nifty Next 50</option>
+              <option value="NiftyMidcap150Header">Nifty Midcap 150</option>
+              <option value="Nifty200M30Header">Nifty200 Momentum 30</option>
+              <option value="Nifty100Header">Nifty 100</option>
+              <option value="Nifty500Header">Nifty 500</option>
+              <option value="Nifty50EqualWeightHeader">Nifty 50 Equal Weight</option>
+              <option value="NiftySmallcap250Header">Nifty Smallcap 250</option>
+              <option value="NiftyMicrocap250Header">Nifty Microcap 250</option>
+              <option value="NiftyBankHeader">Nifty Bank</option>
+              <option value="N50V20Header">Nifty 50 Value 20</option>
+              <option value="N100LV30Header">Nifty 100 Low Volatility 30</option>
+              <option value="BSEEnhancedHeader">S&P BSE Enhanced Value</option>
+              <option value="NALV30Header">Nifty Alpha Low Volatility 30</option>
+              <option value="SP500">S&P 500</option>
+              <option value="N100Header">Nasdaq 100</option>
+          </select>
+      </div>
+    </div>
+
+    <h3 class="mt-5 mb-3 text-center" id="Nifty50Header">Nifty 50</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -51,7 +84,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Sensex</h3>
+    <h3 class="mt-5 mb-3 text-center" id="SensexHeader">Sensex</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -66,7 +99,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty Next 50</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NiftyNext50Header">Nifty Next 50</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -87,7 +120,7 @@
       </a>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty Midcap 150</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NiftyMidcap150Header">Nifty Midcap 150</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -102,7 +135,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty200 Momentum 30</h3>
+    <h3 class="mt-5 mb-3 text-center" id="Nifty200M30Header">Nifty200 Momentum 30</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -117,7 +150,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty 100</h3>
+    <h3 class="mt-5 mb-3 text-center" id="Nifty100Header">Nifty 100</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -132,7 +165,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty 500</h3>
+    <h3 class="mt-5 mb-3 text-center" id="Nifty500Header">Nifty 500</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -147,7 +180,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty 50 Equal Weight</h3>
+    <h3 class="mt-5 mb-3 text-center" id="Nifty50EqualWeightHeader">Nifty 50 Equal Weight</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -162,7 +195,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty Smallcap 250</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NiftySmallcap250Header">Nifty Smallcap 250</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -183,7 +216,7 @@
       </a>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty Microcap 250</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NiftyMicrocap250Header">Nifty Microcap 250</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -198,7 +231,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty Bank</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NiftyBankHeader">Nifty Bank</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -213,7 +246,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty 50 Value 20</h3>
+    <h3 class="mt-5 mb-3 text-center" id="N50V20Header">Nifty 50 Value 20</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -228,7 +261,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">Nifty 100 Low Volatility 30</h3>
+    <h3 class="mt-5 mb-3 text-center" id="N100LV30Header">Nifty 100 Low Volatility 30</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -243,7 +276,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center">S&P BSE Enhanced Value</h3>
+    <h3 class="mt-5 mb-3 text-center" id="BSEEnhancedHeader">S&P BSE Enhanced Value</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -258,7 +291,22 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center"><i class="fas fa-flag-usa"></i> S&P 500 (Investment Paused)</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NALV30Header">Nifty Alpha Low Volatility 30</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Fund Name</th>
+            <th >Tracking Error (A)</th>
+            <th >Expense Ratio (B)</th>
+            <th>Total Fees (A+B)</th>
+          </tr>
+        </thead>
+        <tbody id="NALV30"></tbody>
+      </table>
+    </div>
+
+    <h3 class="mt-5 mb-3 text-center" id="SP500Header"><i class="fas fa-flag-usa"></i> S&P 500 (Investment Paused)</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -273,7 +321,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center"><i class="fas fa-flag-usa"></i> Nasdaq 100 (Investment Paused)</h3>
+    <h3 class="mt-5 mb-3 text-center" id="N100Header"><i class="fas fa-flag-usa"></i> Nasdaq 100 (Investment Paused)</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -336,13 +384,13 @@
     ];
 
     let Sensex = [
-      { fundName: "HDFC Sensex", trackingError: 0.03, expenseRatio: 0.2, totalFees: 0 },
+      { fundName: "HDFC Sensex", trackingError: 0.04, expenseRatio: 0.2, totalFees: 0 },
       { fundName: "ICICI Pru Sensex", trackingError: 0.06, expenseRatio: 0.19, totalFees: 0 },
       { fundName: "Nippon India Sensex", trackingError: 0.06, expenseRatio: 0.2, totalFees: 0 }
     ];
 
     let NiftyNext50 = [
-      { fundName: "UTI Nifty Next 50", trackingError: 0.06, expenseRatio: 0.34, totalFees: 0 },
+      { fundName: "DSP Nifty Next 50", trackingError: 0.12, expenseRatio: 0.28, totalFees: 0 },
       { fundName: "SBI Nifty Next 50", trackingError: 0.05, expenseRatio: 0.33, totalFees: 0 },
       { fundName: "ICICI Pru Nifty Next 50", trackingError: 0.09, expenseRatio: 0.31, totalFees: 0 }
     ];
@@ -357,12 +405,12 @@
     let Nifty200M30 = [
       { fundName: "UTI Nifty200 Momentum 30", trackingError: 0.18, expenseRatio: 0.46, totalFees: 0 },
       { fundName: "Motilal Oswal", trackingError: 0.15, expenseRatio: 0.33, totalFees: 0 },
-      { fundName: "HDFC Nifty200 Momentum 30", trackingError: 0.16, expenseRatio: 0.4, totalFees: 0 }
+      { fundName: "HDFC Nifty200 Momentum 30", trackingError: 0.15, expenseRatio: 0.4, totalFees: 0 }
     ];
 
     let Nifty100 = [
       { fundName: "Axis Nifty 100", trackingError: 0.07, expenseRatio: 0.21, totalFees: 0 },
-      { fundName: "HDFC (AUM<600Cr)", trackingError: 0.06, expenseRatio: 0.3, totalFees: 0 },
+      { fundName: "HDFC (AUM<600Cr)", trackingError: 0.07, expenseRatio: 0.3, totalFees: 0 },
       { fundName: "Bandhan (AUM<600Cr)", trackingError: 0.06, expenseRatio: 0.1, totalFees: 0 }
     ];
 
@@ -373,7 +421,7 @@
     let Nifty50EqualWeight = [
       { fundName: "DSP Nifty 50 Equal Weight", trackingError: 0.05, expenseRatio: 0.4, totalFees: 0 },
       { fundName: "HDFC Nifty 50 Equal Weight", trackingError: 0.04, expenseRatio: 0.4, totalFees: 0 },
-      { fundName: "Aditya Birla (AUM<600Cr)", trackingError: 0.04, expenseRatio: 0.4, totalFees: 0 }
+      { fundName: "Aditya Birla (AUM<600Cr)", trackingError: 0.05, expenseRatio: 0.4, totalFees: 0 }
     ];
 
     let NiftySmallcap250 = [
@@ -387,31 +435,36 @@
     ];
 
     let NiftyBank = [
-      { fundName: "Motilal Oswal Nifty Bank", trackingError: 0.09, expenseRatio: 0.33, totalFees: 0 },
+      { fundName: "Motilal Oswal Nifty Bank", trackingError: 0.08, expenseRatio: 0.33, totalFees: 0 },
       { fundName: "Navi Nifty Bank (AUM<600Cr)", trackingError: 0.05, expenseRatio: 0.1, totalFees: 0 },
       { fundName: "ICICI Prudential (AUM<600Cr)", trackingError: 0.12, expenseRatio: 0.2, totalFees: 0 }
     ];
 
     let N50V20 = [
       { fundName: "Nippon India Nifty 50 Value 20", trackingError: 0.09, expenseRatio: 0.25, totalFees: 0 },
-      { fundName: "ICICI Prudential (AUM<600Cr)", trackingError: 0.08, expenseRatio: 0.2, totalFees: 0 }
+      { fundName: "ICICI Prudential (AUM<600Cr)", trackingError: 0.08, expenseRatio: 0.25, totalFees: 0 }
     ];
 
     let N100LV30 = [
       { fundName: "Bandhan Nifty100 Low Volatility 30", trackingError: 0.23, expenseRatio: 0.35, totalFees: 0 },
-      { fundName: "Kotak (AUM<600Cr)", trackingError: 0.19, expenseRatio: 0.33, totalFees: 0 }
+      { fundName: "Kotak (AUM<600Cr)", trackingError: 0.19, expenseRatio: 0.33, totalFees: 0 },
+      { fundName: "HDFC (AUM<600Cr)", trackingError: 0.06, expenseRatio: 0.4, totalFees: 0 },
     ];
 
     let BSEEnhanced = [
-      { fundName: "Motilal Oswal BSE Enhanced Value", trackingError: 0.32, expenseRatio: 0.45, totalFees: 0 }
+      { fundName: "Motilal Oswal BSE Enhanced Value", trackingError: 0.33, expenseRatio: 0.45, totalFees: 0 }
+    ];
+
+    let NALV30 = [
+      { fundName: "Nippon Nifty Alpha Low Volatility 30", trackingError: 0.28, expenseRatio: 0.35, totalFees: 0 }
     ];
 
     let SP500 = [
-      { fundName: "Motilal Oswal S&P 500", trackingError: 0.08, expenseRatio: 0.62, totalFees: 0 }
+      { fundName: "Motilal Oswal S&P 500", trackingError: 0.1, expenseRatio: 0.62, totalFees: 0 }
     ];
 
     let N100 = [
-      { fundName: "ICICI Pru Nasdaq 100", trackingError: 0.66, expenseRatio: 0.52, totalFees: 0 }
+      { fundName: "ICICI Pru Nasdaq 100", trackingError: 0.11, expenseRatio: 0.52, totalFees: 0 }
     ];
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -504,12 +557,18 @@
       updateTable(BSEEnhanced, 'BSEEnhanced');
 
       // Fund 15
+      updateTable(NALV30, 'NALV30');
+      calculateTotalFees(NALV30);
+      NALV30.sort((a, b) => a.totalFees - b.totalFees);
+      updateTable(NALV30, 'NALV30');
+
+      // Fund 16
       updateTable(SP500, 'SP500');
       calculateTotalFees(SP500);
       SP500.sort((a, b) => a.totalFees - b.totalFees);
       updateTable(SP500, 'SP500');
 
-      // Fund 16
+      // Fund 17
       updateTable(N100, 'N100');
       calculateTotalFees(N100);
       N100.sort((a, b) => a.totalFees - b.totalFees);
@@ -544,6 +603,16 @@
             tbody.appendChild(row);
         }
     }
+
+    document.getElementById('section-select').addEventListener('change', function() {
+            const selectedValue = this.value;
+            if (selectedValue) {
+                const element = document.getElementById(selectedValue);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
 
   </script>
 
