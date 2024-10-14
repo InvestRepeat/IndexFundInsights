@@ -63,6 +63,8 @@
               <option value="N100LV30Header">Nifty 100 Low Volatility 30</option>
               <option value="BSEEnhancedHeader">S&P BSE Enhanced Value</option>
               <option value="NALV30Header">Nifty Alpha Low Volatility 30</option>
+              <option value="NM150M50Header">Nifty Midcap 150 Momentum 50</option>
+              <option value="NLM250Header">Nifty Large Midcap 250</option>
               <option value="SP500">S&P 500</option>
               <option value="N100Header">Nasdaq 100</option>
           </select>
@@ -306,6 +308,36 @@
       </table>
     </div>
 
+    <h3 class="mt-5 mb-3 text-center" id="NM150M50Header">Nifty Midcap 150 Momentum 50</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Fund Name</th>
+            <th >Tracking Error (A)</th>
+            <th >Expense Ratio (B)</th>
+            <th>Total Fees (A+B)</th>
+          </tr>
+        </thead>
+        <tbody id="NM150M50"></tbody>
+      </table>
+    </div>
+
+    <h3 class="mt-5 mb-3 text-center" id="NLM250Header">Nifty Large Midcap 250</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Fund Name</th>
+            <th >Tracking Error (A)</th>
+            <th >Expense Ratio (B)</th>
+            <th>Total Fees (A+B)</th>
+          </tr>
+        </thead>
+        <tbody id="NLM250"></tbody>
+      </table>
+    </div>
+
     <h3 class="mt-5 mb-3 text-center" id="SP500Header"><i class="fas fa-flag-usa"></i> S&P 500 (Investment Paused)</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
@@ -392,7 +424,7 @@
     let NiftyNext50 = [
       { fundName: "UTI Nifty Next 50", trackingError: 0.07, expenseRatio: 0.33, totalFees: 0 },
       { fundName: "SBI Nifty Next 50", trackingError: 0.07, expenseRatio: 0.32, totalFees: 0 },
-      { fundName: "ICICI Pru Nifty Next 50", trackingError: 0.09, expenseRatio: 0.31, totalFees: 0 }
+      { fundName: "NAVI Nifty Next 50", trackingError: 0.28, expenseRatio: 0.11, totalFees: 0 }
     ];
 
     let NiftyMidcap150 = [
@@ -457,6 +489,15 @@
 
     let NALV30 = [
       { fundName: "Nippon Nifty Alpha Low Volatility 30", trackingError: 0.28, expenseRatio: 0.35, totalFees: 0 }
+    ];
+
+    let NM150M50 = [
+      { fundName: "Edelweiss Nifty Midcap 150 Momentum 50", trackingError: 0.54, expenseRatio: 0.4, totalFees: 0 },
+      { fundName: "Tata Nifty Midcap 150 Momentum 50", trackingError: 0.67, expenseRatio: 0.31, totalFees: 0 }
+    ];
+
+    let NLM250 = [
+      { fundName: "Zerodha Nifty Large Midcap 250", trackingError: 0.06, expenseRatio: 0.26, totalFees: 0 }
     ];
 
     let SP500 = [
@@ -563,12 +604,24 @@
       updateTable(NALV30, 'NALV30');
 
       // Fund 16
+      updateTable(NM150M50, 'NM150M50');
+      calculateTotalFees(NM150M50);
+      NALV30.sort((a, b) => a.totalFees - b.totalFees);
+      updateTable(NM150M50, 'NM150M50');
+
+      // Fund 17
+      updateTable(NLM250, 'NLM250');
+      calculateTotalFees(NLM250);
+      NALV30.sort((a, b) => a.totalFees - b.totalFees);
+      updateTable(NLM250, 'NLM250');
+
+      // Fund 18
       updateTable(SP500, 'SP500');
       calculateTotalFees(SP500);
       SP500.sort((a, b) => a.totalFees - b.totalFees);
       updateTable(SP500, 'SP500');
 
-      // Fund 17
+      // Fund 19
       updateTable(N100, 'N100');
       calculateTotalFees(N100);
       N100.sort((a, b) => a.totalFees - b.totalFees);
