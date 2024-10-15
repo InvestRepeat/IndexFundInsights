@@ -64,7 +64,7 @@
               <option value="BSEEnhancedHeader">S&P BSE Enhanced Value</option>
               <option value="NALV30Header">Nifty Alpha Low Volatility 30</option>
               <option value="NM150M50Header">Nifty Midcap 150 Momentum 50</option>
-              <option value="NLM250Header">Nifty Large Midcap 250</option>
+              <option value="NLM250Header">Nifty LargeMidcap 250</option>
               <option value="SP500">S&P 500</option>
               <option value="N100Header">Nasdaq 100</option>
           </select>
@@ -323,7 +323,7 @@
       </table>
     </div>
 
-    <h3 class="mt-5 mb-3 text-center" id="NLM250Header">Nifty Large Midcap 250</h3>
+    <h3 class="mt-5 mb-3 text-center" id="NLM250Header">Nifty LargeMidcap 250</h3>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -497,7 +497,9 @@
     ];
 
     let NLM250 = [
-      { fundName: "Zerodha Nifty Large Midcap 250", trackingError: 0.06, expenseRatio: 0.26, totalFees: 0 }
+      { fundName: "Zerodha Nifty Large Midcap 250", trackingError: 0.06, expenseRatio: 0.26, totalFees: 0 },
+      { fundName: "Edelweiss (AUM<600Cr)", trackingError: 0.08, expenseRatio: 0.23, totalFees: 0 },
+      { fundName: "ICICI Pru (AUM<600Cr)", trackingError: 0.12, expenseRatio: 0.25, totalFees: 0 }
     ];
 
     let SP500 = [
@@ -606,13 +608,13 @@
       // Fund 16
       updateTable(NM150M50, 'NM150M50');
       calculateTotalFees(NM150M50);
-      NALV30.sort((a, b) => a.totalFees - b.totalFees);
+      NM150M50.sort((a, b) => a.totalFees - b.totalFees);
       updateTable(NM150M50, 'NM150M50');
 
       // Fund 17
       updateTable(NLM250, 'NLM250');
       calculateTotalFees(NLM250);
-      NALV30.sort((a, b) => a.totalFees - b.totalFees);
+      NLM250.sort((a, b) => a.totalFees - b.totalFees);
       updateTable(NLM250, 'NLM250');
 
       // Fund 18
