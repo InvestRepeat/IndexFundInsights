@@ -10,6 +10,8 @@
   <link rel="icon" href="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_300/https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_150/https://www.saveinvestrepeat.com/wp-content/uploads/2023/12/cfp19.png" type="image/x-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -34,6 +36,29 @@
             padding: 20px;
             border-bottom: 1px solid #dee2e6;
         }
+
+    #scrollToTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #000000;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: background-color 0.3s, opacity 0.3s;
+        opacity: 0.7;
+    }
+
+    #scrollToTop:hover {
+      background-color: #333333;
+        opacity: 1;
+    }
   </style>
 
 </head>
@@ -64,7 +89,7 @@
                   <option value="Nifty50EqualWeightHeader">Nifty 50 Equal Weight</option>
                   <option value="N100LV30Header">Nifty 100 Low Volatility 30</option>
                   <option value="NALV30Header">Nifty Alpha Low Volatility 30</option>
-                  <option value="NM150M50Header">Nifty Midcap 150 Momentum 50</option>
+                  <option value="NM150M50Header">Nifty Midcap150 Momentum 50</option>
                   <option value="N50V20Header">Nifty 50 Value 20</option>
                   <option value="BSEEnhancedHeader">S&P BSE Enhanced Value</option>
                   <option value="Top10EWHeader">Nifty Top 10 Equal Weight</option>
@@ -438,6 +463,9 @@
       <p>Code is open source. Help me make it better & more automated: <a href="https://github.com/InvestRepeat/IndexFundInsights" target="_blank">Github.com/InvestRepeat</a>. For any suggestions or data correction, please message me on X at <a href="https://x.com/InvestRepeat" target="_blank">@InvestRepeat</a></p>
     </div>
 
+    <button id="scrollToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </div>
   </div>
   </div>
@@ -733,6 +761,27 @@
                 }
             }
         });
+
+
+    // Below code for scroll arrow to the top
+    const scrollButton = document.getElementById("scrollToTop");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    // When the user clicks on the button, scroll to the top of the document
+    scrollButton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 
   </script>
 
